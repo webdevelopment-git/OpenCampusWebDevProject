@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>En-/Decoder</title>
+        <link rel="shortcut icon" type="image/jpg" id="favIcon" href="../Images/lockIcon_dark.svg"/>
+        <link rel="stylesheet" href="../CSS/reset.css">
+        <link rel="stylesheet" href="../CSS/style.css">
+        <script type="text/javascript" src="../JS/coding.js"></script>
+    </head>
+    <body>
+        <div id="customColorDialogue">
+            <div>
+                <button id="customColorClose">Close</button>
+                <h1>Custom Color Settings</h1>
+                <p>You can customize the color settings on this site. Just enter your prefered colors
+                    in the boxes below using hexadecimal representations of rgb-values. (e.g. 'AA7710')</p>
+                <label for="customBackground">Background color</label>
+                <input id="customBackground">
+                <label for="customClickable">Clickable element color</label>
+                <input id="customClickable">
+                <label for="customClickableFont">Clickable element font color</label>
+                <input id="customClickableFont">
+                <label for="customTypeable">Text box color</label>
+                <input id="customTypeable">
+                <label for="customFont">Font color</label>
+                <input id="customFont"><br>
+                <button id="customColorConfirm">Confirm choice</button>
+            </div>
+        </div>
+        <header>
+            <div id="lockAnimation">
+                <svg id="lockShackle" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1081px"
+                height="1081px" viewBox="-0.5 -0.5 1081 1081">
+                <defs/><g>
+                <path class="lockShackle" d="M 0 540 C 0 241.77 241.77 0 540 0 C 838.23 0 1080 241.77 1080 540 L 960 540
+                C 960 308.04 771.96 120 540 120 C 308.04 120 120 308.04 120 540 Z" fill="#000000"
+                stroke="none" pointer-events="all"/>
+                <rect class="lockPart" x="0" y="539" width="120" height="120" fill="#000000" stroke="none"
+                pointer-events="all"/>
+                <rect class="lockPart" x="960" y="539" width="120" height="540" fill="#000000" stroke="none"
+                pointer-events="all"/>
+                </g></svg>
+                <svg id="lockBlock" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="241px"
+                height="181px" viewBox="-0.5 -0.5 241 181">
+                <defs/><g>
+                <rect class="lockPart" x="0" y="0" width="240" height="180" fill="#000000" stroke="#000000" pointer-events="all"/>
+                </g></svg>
+            </div>
+            <h1 class="font">Encoder / Decoder</h1>
+            <div id="menu">
+                <button class="clickable menuButton" id="viewMode">Day Mode</button>
+                <button class="clickable menuButton" id="sendMail">Send encoded text via e-mail</button>
+                <button class="clickable menuButton" id="customColors">Custom Color Settings</button>
+            </div>
+        </header>
+        <main>
+            <label for="plaintext" class="font">Plaintext:</label>
+            <textarea id="plaintext" rows="10" class="font typeable" placeholder="Plaintext..."></textarea>
+            <div id="controlls">
+                <div id="encode">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="61px" height="120px"
+                    viewBox="-0.5 -0.5 61 120">
+                    <defs/><g>
+                    <path class="arrow" d="M 20.51 0.5 L 39.49 0.5 L 39.49 80.49 L 59.55 80.49 L 30 119.5 L 0.45 80.49 L 20.51 80.49 Z" fill="#506050"
+                    stroke="#506050" stroke-linejoin="round" stroke-miterlimit="10" pointer-events="all"/>
+                    </g></svg>
+                    <button id="encodeButton" class="clickable">Encode</button>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="61px" height="120px"
+                    viewBox="-0.5 -0.5 61 120">
+                    <defs/><g>
+                    <path class="arrow" d="M 20.51 0.5 L 39.49 0.5 L 39.49 80.49 L 59.55 80.49 L 30 119.5 L 0.45 80.49 L 20.51 80.49 Z" fill="#506050"
+                    stroke="#506050" stroke-linejoin="round" stroke-miterlimit="10" pointer-events="all"/>
+                    </g></svg>
+                </div>
+                <div id="encodingControlls">
+                    <label for="encodingSelect" class="font">Encoding:</label>
+                    <select id="encodingSelect" class="clickable">
+                        <option selected>ASCII</option>
+                        <option>Binary</option>
+                        <option>Caesar</option>
+                        <option>Hexadecimal</option>
+                        <option>Morse</option>
+                        <option>ROT13</option>
+                        <option>XOR</option>
+                    </select>
+                    <label id="keyLabel" for="key" class="font">Key:</label>
+                    <input id="key" class="font typeable">
+                </div>
+                <div id="decode">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="61px" height="120px"
+                    viewBox="-0.5 -0.5 61 120">
+                    <defs/><g>
+                    <path class="arrow" d="M 39.49 119.5 L 20.51 119.5 L 20.51 39.51 L 0.45 39.51 L 30 0.5 L 59.55 39.51 L 39.49 39.51 Z"
+                    fill="#506050" stroke="#506050" stroke-linejoin="round" stroke-miterlimit="10" pointer-events="all"/>
+                    </g></svg>
+                    <button id="decodeButton" class="clickable">Decode</button>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="61px" height="120px"
+                    viewBox="-0.5 -0.5 61 120">
+                    <defs/><g>
+                    <path class="arrow" d="M 39.49 119.5 L 20.51 119.5 L 20.51 39.51 L 0.45 39.51 L 30 0.5 L 59.55 39.51 L 39.49 39.51 Z"
+                    fill="#506050" stroke="#506050" stroke-linejoin="round" stroke-miterlimit="10" pointer-events="all"/>
+                    </g></svg>
+                </div>
+            </div>
+            <label for="encodedText" class="font">Encoded Text:</label>
+            <textarea id="encodedText" rows="10" class="font typeable" placeholder="Encoded text..."></textarea>
+        </main>
+        <footer>
+            <p class="font">This project is open source.</p>
+            <p class="font">The source code can be found on
+                <a href="" alt="Link to the projects code repository" class="clickable">GitHub</a>.</p>
+            <p class="font">It was created for a course at 
+                <a href="https://www.opencampus.sh" class="clickable">OpenCampus</a>.</p>
+        </footer>
+    </body>
+</html>

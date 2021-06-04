@@ -1,0 +1,195 @@
+.font {
+    color:#006600;
+}
+
+.typeable {
+    background-color: #000000;
+    border-style: solid;
+    border-color: #006600;
+}
+
+.clickable {
+    color: #000000;
+    background-color: #506050;
+    padding: 2px;
+}
+
+body {
+    font-family:'Courier New', Courier, monospace;
+    background-color: #112222;
+}
+
+header {
+    height: 10%;
+    text-align: center;
+    padding: 1%;
+}
+
+#lockShackle {
+    float:left;
+    margin-top: 1%;
+    margin-left: 2%;
+    width: 3%;
+    height: 3%;
+}
+
+#lockBlock {
+    float: left;
+    height: 3.5%;
+    width: 3.5%;
+    margin-left: -3.25%;
+    margin-top: 3.5%;
+    margin-bottom: 1%;
+    transition: margin-top 0.5s 0.1s, margin-bottom 0.5s 0.1s;
+}
+
+#lockBlock:hover {
+    margin-top: 2.5%;
+    margin-bottom: 2%;
+}
+
+h1 {
+    font-size: 5em;
+    text-decoration: underline;
+    text-align: center;
+}
+
+#menu {
+    display: block;
+    width: 6%;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+
+.menuButton {
+    margin: 5px;
+    width: 100%;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+}
+
+label {
+    margin: 5px 5px 5px 5%;
+    display: block;
+    clear: both;
+}
+
+textarea {
+    padding: 1%;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    border-style: solid;
+    border-radius: 15px;
+    word-break: break-all;
+}
+
+textarea:focus, input:focus{
+    outline:none;
+}
+
+#key {
+    text-align: center;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+#controlls {
+    display: flex;
+    width: 100%;
+    margin: 2% 0% 1% 0%;
+}
+
+#encode, #encodingControlls, #decode{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin: auto;
+}
+
+#keyLabel, #key {
+    visibility: hidden;
+}
+
+#encode img {
+    transform: rotate(180deg);
+}
+
+#encodingControlls {
+    display: block;
+    text-align: center;
+}
+
+select {
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+    appearance: none;
+    outline: none;
+}
+
+footer {
+    margin-top: 3%;
+    width: 100%;
+    text-align: center;
+}
+
+footer p {
+    margin: 1% 0%;
+}
+
+footer a {
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#customColorDialogue {
+    visibility: hidden;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.4);
+    border: solid #000000 2px;
+}
+
+#customColorDialogue div {
+    border-radius: 25px;
+    width: 60%;
+    height: 50%;
+    margin: 5% 18%;
+    background-color: #FFFFFF;
+    padding: 2%;
+    text-align: center;
+}
+
+#customColorDialogue label {
+    margin: 1% 0% 0.5% 0%;
+}
+
+#customColorDialogue input {
+    margin: 0% 0% 2% 0%;
+    clear: both;
+}
+
+#customColorDialogue h1 {
+    font-size: 3em;
+    text-decoration: none;
+    margin-bottom: 2%;
+}
+
+#customColorClose {
+    border: solid 1px #000000;
+    position: absolute;
+    top: 13%;
+    right: 20%;
+}
+
+#customColorConfirm {
+    margin-top: 3%;
+    border: solid 1px #000000;
+}
