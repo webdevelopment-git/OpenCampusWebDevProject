@@ -461,7 +461,6 @@ function useCustomColors() {
     let clickableElements = document.getElementsByClassName("clickable");
     let arrows = document.getElementsByClassName("arrow");
     let lockParts = document.getElementsByClassName("lockPart");
-    //XX
     let fontColor = markHexValue(document.getElementById("customFont").value);
     let typeableColor =
     markHexValue(document.getElementById("customTypeable").value);
@@ -471,6 +470,26 @@ function useCustomColors() {
     markHexValue(document.getElementById("customClickableFont").value);
     let customBackgroundColor =
     markHexValue(document.getElementById("customBackground").value);
+    if (isNoValidColor(fontColor)) {
+        fontColor = "#006600";
+        alert("Invalid color entered for 'Font color'.")
+    }
+    if (isNoValidColor(typeableColor)) {
+        typeableColor = "#000000";
+        alert("Invalid color entered for 'Text box color'.")
+    }
+    if (isNoValidColor(clickableColor)) {
+        clickableColor = "#506050";
+        alert("Invalid color entered for 'Clickable element color'.")
+    }
+    if (isNoValidColor(clickableFontColor)) {
+        clickableFontColor = "#000000";
+        alert("Invalid color entered for 'Clickable element font color'.")
+    }
+    if (isNoValidColor(customBackgroundColor)) {
+        customBackgroundColor = "#112222";
+        alert("Invalid color entered for 'Background color'.")
+    }
     for (let i = 0; i < fontElements.length; i++) {
         fontElements[i].style.color = fontColor;
     }
@@ -493,6 +512,23 @@ function useCustomColors() {
     }
     document.getElementsByClassName("lockShackle")[0].setAttribute("fill",
     typeableColor);
+}
+
+function isNoValidColor(str) {
+    if (str[0] == "#") {
+        str = str.substring(1, str.length);
+    }
+    if (str.length != 6) {
+        return true;
+    } else {
+        for (let i = 0; i < str.length; i++) {
+            if (["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B",
+            "C", "D", "E", "F"].indexOf(str[i]) == -1) {
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
 function markHexValue(str) {
