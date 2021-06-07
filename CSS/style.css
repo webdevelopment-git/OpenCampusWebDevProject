@@ -57,6 +57,7 @@ h1 {
     font-size: 5em;
     text-decoration: underline;
     text-align: center;
+    margin-top: 0.5%;
 }
 
 #menu {
@@ -145,6 +146,10 @@ footer {
 
 footer p {
     margin: 1% 0;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
 }
 
 footer a {

@@ -412,6 +412,7 @@ function switchViewMode() {
     let typeableElements = document.getElementsByClassName("typeable");
     let clickableElements = document.getElementsByClassName("clickable");
     let arrows = document.getElementsByClassName("arrow");
+    let lockParts = document.getElementsByClassName("lockPart");
     if (darkMode) {
         for (let i = 0; i < fontElements.length; i++) {
             fontElements[i].style.color = "#000000";
@@ -429,6 +430,12 @@ function switchViewMode() {
             arrows[i].setAttribute("stroke", "#AAAAAA");
         }
         document.body.style.backgroundColor = "#FFFFFF";
+        for (let i = 0; i < lockParts.length; i++) {
+            lockParts[i].setAttribute("fill", "#000000");
+            lockParts[i].setAttribute("stroke", "#000000");
+        }
+        document.getElementsByClassName("lockShackle")[0].setAttribute("fill",
+        "#000000");
         document.getElementById("favIcon").href="../Images/lockIcon_light.svg";
         switchViewButton.innerHTML = "Night Mode";
         darkMode = false;
@@ -449,6 +456,12 @@ function switchViewMode() {
             arrows[i].setAttribute("stroke", "#506050");
         }
         document.body.style.backgroundColor = "#112222";
+        for (let i = 0; i < lockParts.length; i++) {
+            lockParts[i].setAttribute("fill", "#006600");
+            lockParts[i].setAttribute("stroke", "#006600");
+        }
+        document.getElementsByClassName("lockShackle")[0].setAttribute("fill",
+        "#006600");
         document.getElementById("favIcon").href="../Images/lockIcon_dark.svg";
         switchViewButton.innerHTML = "Day Mode";
         darkMode = true;
