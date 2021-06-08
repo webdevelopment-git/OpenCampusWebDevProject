@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     addListeners();
     checkKeyNeeded();
+    insertFavIcon("#006600", "#000000");
 });
 
 let latestCipher = "";
@@ -436,7 +437,7 @@ function switchViewMode() {
         }
         document.getElementsByClassName("lockShackle")[0].setAttribute("fill",
         "#000000");
-        document.getElementById("favIcon").href="../Images/lockIcon_light.svg";
+        insertFavIcon("#000000", "#DDDDDD");
         switchViewButton.innerHTML = "Night Mode";
         darkMode = false;
     } else {
@@ -462,7 +463,7 @@ function switchViewMode() {
         }
         document.getElementsByClassName("lockShackle")[0].setAttribute("fill",
         "#006600");
-        document.getElementById("favIcon").href="../Images/lockIcon_dark.svg";
+        insertFavIcon("#006600", "#000000");
         switchViewButton.innerHTML = "Day Mode";
         darkMode = true;
     }
@@ -525,6 +526,43 @@ function useCustomColors() {
     }
     document.getElementsByClassName("lockShackle")[0].setAttribute("fill",
     typeableColor);
+    insertFavIcon(fontColor, typeableColor);
+}
+
+function insertFavIcon(drawingColor, backgroundColor) {
+    let favIconSVG = `<svg xmlns='http://www.w3.org/2000/svg'
+    xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1'
+    width='18px' height='18px' viewBox='-0.5 -0.5 18 18'
+    style='background-color: rgb(255, 255, 255);'>
+    <rect x='0' y='0' width='16' height='16' fill='${backgroundColor}' stroke='${backgroundColor}' pointer-events='all'/>
+    <ellipse cx='8' cy='5.33' rx='3.555555555555556' ry='3.555555555555556' fill='${drawingColor}'
+    stroke='${drawingColor}' pointer-events='all'/>
+    <rect x='4.44' y='5.33' width='7.11' height='2.22' fill='${drawingColor}' stroke='${drawingColor}'
+    pointer-events='all'/>
+    <ellipse cx='8' cy='5.33' rx='2.666666666666667' ry='2.666666666666667' fill='${backgroundColor}'
+    stroke='none' pointer-events='all'/>
+    <rect x='5.33' y='5.33' width='5.33' height='1.33' fill='${backgroundColor}' stroke='none'
+    pointer-events='all'/>
+    <rect x='3.56' y='6.67' width='8.89' height='7.56' fill='${drawingColor}' stroke='${drawingColor}'
+    pointer-events='all'/>
+    <ellipse cx='8' cy='9.33' rx='1.3333333333333335' ry='1.3333333333333335' fill='${backgroundColor}'
+    stroke='none' pointer-events='all'/>
+    <rect x='7.11' y='10.22' width='1.78' height='1.78' fill='${backgroundColor}' stroke='none'
+    pointer-events='all'/>
+    <ellipse cx='8' cy='12' rx='0.888888888888889' ry='0.888888888888889' fill='${backgroundColor}'
+    stroke='none' pointer-events='all'/>
+    </svg>`;
+    let canvas = document.createElement("canvas");
+    canvas.width = 16;
+    canvas.height = 16;
+    let context = canvas.getContext("2d");
+    let favIconSVGElement = new Blob([favIconSVG], {type:"image/svg+xml;charset=utf-8"});
+    let image = new Image;
+    image.onload = function () {
+        context.drawImage(image, 0, 0);
+        document.getElementById("favIcon").href = canvas.toDataURL();
+    };
+    image.src = URL.createObjectURL(favIconSVGElement);
 }
 
 function isNoValidColor(str) {
