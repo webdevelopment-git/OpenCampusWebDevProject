@@ -118,7 +118,7 @@ textarea:focus, input:focus{
 }
 
 #keyLabel, #key {
-    visibility: hidden;
+    display: none;
 }
 
 #encode img {
@@ -202,4 +202,70 @@ footer a {
 #customColorConfirm {
     margin-top: 3%;
     border: solid 1px #000000;
+}
+
+@media screen and (max-width: 849px) {
+    header {
+        margin: 5%;
+    }
+
+    h1 {
+        font-size: 200%;
+        clear: both;
+    }
+
+    #menu {
+        position: relative;
+        width: 80%;
+        height: fit-content;
+        margin: 5% 10%;
+    }
+
+    #encode svg, #decode svg {
+        display: none;
+    }
+
+    footer {
+        width: 90%;
+        margin: 5%;
+    }
+
+    footer p {
+        display: inline;
+        line-height: 150%;
+    }
+
+    #controlls {
+        display: block;
+        margin: 4% 0 3% 0;
+    }
+
+    #encode, #encodingControlls, #decode{
+        margin: 2%;
+    }
+
+    textarea {
+        padding: 2% 3%;
+        width: 86%;
+    }
+
+    #lockShackle {
+        margin-left: 41%;
+        width: 18%;
+        height: 18%;
+    }
+
+    #lockBlock {
+        width: 21%;
+        height: 21%;
+        margin-left: -19.5%;
+        margin-top: 16%;
+        margin-bottom: 3%;
+        transition: margin-top 0.5s, margin-bottom 0.5s;
+    }
+
+    #lockBlock:hover {
+        margin-top: 10%;
+        margin-bottom: 9%;
+    }
 }

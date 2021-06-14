@@ -61,11 +61,11 @@ function addListeners() {
 function checkKeyNeeded() {
     let encoding = document.getElementById("encodingSelect").value;
     if (keyEncodings.indexOf(encoding) != -1) {
-        document.getElementById("keyLabel").style.visibility = "visible";
-        document.getElementById("key").style.visibility = "visible";
+        document.getElementById("keyLabel").style.display = "block";
+        document.getElementById("key").style.display = "initial";
     } else {
-        document.getElementById("keyLabel").style.visibility = "hidden";
-        document.getElementById("key").style.visibility = "hidden";
+        document.getElementById("keyLabel").style.display = "none";
+        document.getElementById("key").style.display = "none";
     }
 }
 
